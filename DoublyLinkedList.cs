@@ -8,13 +8,13 @@ using CSVHelper;
 namespace CSVReaders
 {
 
-    public class DoublyLinkedLIst<T>
+    public class DoublyLinkedList<T>
     {
-        private int Size;
+        public int Size { get; set; }
         private Node<T> Head;
         private Node<T> Tail;
 
-        public DoublyLinkedLIst()
+        public DoublyLinkedList<T>()
         {
 
             Head = null;
@@ -56,6 +56,19 @@ namespace CSVReaders
                 Next = next;
 
             }
+        }
+
+        public T get(int index)
+        {
+
+            Node<T> current = Head;
+
+            for (int i = 0; i < index; i++)
+            {
+                current = current.Next;
+            }
+            return current.data;
+
         }
 
     }
