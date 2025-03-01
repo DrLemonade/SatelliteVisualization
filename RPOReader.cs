@@ -46,8 +46,7 @@ public class RPOReader{
                     }
 
 
-                    RpoData record = new RpoData(dataMap);
-                    DoublyLinkedList.InsertFirst(record);
+                    List.InsertFirst(dataMap);
                 }
             }
     }
