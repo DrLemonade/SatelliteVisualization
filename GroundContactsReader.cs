@@ -1,10 +1,10 @@
 using System;
 using CSVHelper;
 
-public class ManeuverReader{
+public class GroundContactsReader{
     private string File;
     private DoublyLinkedList List;
-    public ManeuverReader(string file){
+    public GroundContactsReader(string file){
         File = file;
         List = new DoublyLinkedList();
     }
@@ -21,11 +21,10 @@ public class ManeuverReader{
 
                     string[] keys = new string[]
                     {
-                        "maneuverId", "secondsSinceStart", "timeJulianDay", "TimeUtcYear", "TimeUtcMonth",
-                        "TimeUtcDay", "TimeUtcHour", "TimeUtcMinute", "TimeUtcSeconds", "dVEciX",
-                        "dVEciY", "dVEciZ", "dVLvlhX", "dVLvlhY", "dVLvlhZ", "dVBodyX", "dVBodyY", "dVBodyZ",
-                        "dVMagnitude", "WaypointX", "WaypointY", "WaypointZ",
-                        "WaypointTransferTime" 
+                        "contactId","startSeconds","stopSeconds","startJulianDate","stopJulianDate","startUtcYear","startUtcMonth",
+                        "startUtcDay","startUtcHour","startUtcMinute","startUtcSeconds","stopUtcYear","stopUtcMonth","stopUtcDay",
+                        "stopUtcHour","stopUtcMinute","stopUtcSeconds","groundSite"
+
                     };
 
                     foreach (var key in keys)
@@ -39,6 +38,7 @@ public class ManeuverReader{
                             Console.WriteLine($"Error parsing field: {key}");
                         }
                     }
+
 
                     List.InsertFirst(dataMap);
                 }

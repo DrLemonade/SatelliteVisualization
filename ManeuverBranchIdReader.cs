@@ -1,10 +1,10 @@
 using System;
 using CSVHelper;
 
-public class ManeuverReader{
+public class ManeuverBranchIdReader{
     private string File;
     private DoublyLinkedList List;
-    public ManeuverReader(string file){
+    public ManeuverBranchIdReader(string file){
         File = file;
         List = new DoublyLinkedList();
     }
@@ -21,11 +21,10 @@ public class ManeuverReader{
 
                     string[] keys = new string[]
                     {
-                        "maneuverId", "secondsSinceStart", "timeJulianDay", "TimeUtcYear", "TimeUtcMonth",
-                        "TimeUtcDay", "TimeUtcHour", "TimeUtcMinute", "TimeUtcSeconds", "dVEciX",
-                        "dVEciY", "dVEciZ", "dVLvlhX", "dVLvlhY", "dVLvlhZ", "dVBodyX", "dVBodyY", "dVBodyZ",
-                        "dVMagnitude", "WaypointX", "WaypointY", "WaypointZ",
-                        "WaypointTransferTime" 
+                        "secondsSinceStart", "secondsSinceManeuer", "timeJulianDate", "timeUtcYear", 
+                        "timeUtcMonth", "timeUtcDay", "timeUtcHour", "timeUtcMinute", "timeUtcSeconds",
+                        "positionDepRelToChiefLvlhX", "positionDepRelToChiefLvlhY", "positionDepRelToChiefLvlhZ", 
+                        "relativeRange", "relativeVelocity"
                     };
 
                     foreach (var key in keys)
