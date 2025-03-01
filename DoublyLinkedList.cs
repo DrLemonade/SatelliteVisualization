@@ -8,11 +8,11 @@ using CSVHelper;
 namespace CSVReaders
 {
 
-    public class DoublyLinkedList<T>
+    public class DoublyLinkedList
     {
         public int Size { get; set; }
-        private Node<T> Head;
-        private Node<T> Tail;
+        private Node Head;
+        private Node Tail;
 
         public DoublyLinkedList<T>()
         {
@@ -23,10 +23,10 @@ namespace CSVReaders
 
         }
 
-        public void insertFirst(T data)
+        public void insertFirst(Dictionary<string, double> data)
         {
 
-            Node<T> temp = new Node<T>(null, data, Head);
+            Node temp = new Node(null, data, Head);
             Head = temp;
             Size++;
 
@@ -35,7 +35,7 @@ namespace CSVReaders
         public void insertLast(T data)
         {
 
-            Node<T> temp = new Node<T(Tail, data, null);
+            Node temp = new Node(Tail, data, null);
             Tail = temp;
             Size++;
 
@@ -44,11 +44,11 @@ namespace CSVReaders
 
         private class Node
         {
-            public Node<T> Next { get; set; }
-            public Node<T> Prev { get; set; }
-            public T Data { get; set; }
+            public Node Next { get; set; }
+            public Node Prev { get; set; }
+            public Dictionary<string, double> Data { get; set; }
 
-            public Node(Node<T> prev, T data, Node<T> next)
+            public Node(Node prev, Dictionary<string, double> data, Node next)
             {
 
                 Prev = prev;
@@ -61,7 +61,7 @@ namespace CSVReaders
         public T get(int index)
         {
 
-            Node<T> current = Head;
+            Node current = Head;
 
             for (int i = 0; i < index; i++)
             {
